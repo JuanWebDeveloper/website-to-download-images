@@ -1,0 +1,218 @@
+/*===========================
+<|-Global Styles          -|>
+===========================*/
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    width: 50%;
+    height: 450px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    left: 25%;
+}
+
+/*===========================
+<|-Error Alert Styles     -|>
+===========================*/
+.alertTitle {
+    font-size: 30px;
+    color: #fb6d43;
+    text-align: center;
+}
+
+.alertTitle span {
+    color: #8b8b8b;
+}
+
+.alertText {
+    font-size: 20px;
+    text-align: center;
+    color: #8b8b8b;
+}
+
+.alertText br {
+    margin-bottom: 5px;
+}
+
+.alertText span {
+    color: #fb6d43;
+}
+
+/*===========================
+<|-Preview Image Styles   -|>
+===========================*/
+.container .previewBox {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 320px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px dashed #fb6d43;
+}
+
+.container .previewBox.activePreview{
+    border: 2px solid transparent;
+}
+
+.container .previewBox .cancelIcon {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    font-size: 20px;
+    right: 15px;
+    top: 5px;
+    color: #fb6d43;
+    transition: all .4s ease-in-out;
+    z-index: 1000;
+}
+
+.container .previewBox:hover .cancelIcon.activeIcon {
+    display: block;
+}
+
+.container .previewBox .cancelIcon:hover {
+    opacity: .7;
+}
+
+.container .previewBox .imgPreview {
+    position: absolute;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+}
+
+.container .previewBox .imgPreview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.container .previewBox .content.activeContent {
+    opacity: 0;
+}
+
+.container .previewBox .imgIcon {
+    font-size: 100px;
+    color: #fb6d43;
+}
+
+.container .previewBox .text {
+    font-size: 18px;
+    font-weight: 900;
+    color: #8b8b8b;
+}
+
+/*===========================
+<|-Image Url Styles       -|>
+===========================*/
+.container .inputDate {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.container .inputDate #field {
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 1px solid #8b8b8b;
+    outline: none;
+    padding: 0 15px;
+    transition: all .4s ease-in-out;
+}
+
+.container .inputDate #field.disabled {
+    opacity: .8;
+    pointer-events: none;
+    color: #8b8b8b;
+}
+
+.container .inputDate #field:hover,
+.container .inputDate #field:focus {
+    border: 1px solid #fb6d43;
+}
+
+.container .inputDate #field::placeholder {
+    opacity: .8;
+    font-weight: 400;
+    color: #8b8b8b;
+}
+
+.container .inputDate #button {
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    pointer-events: none;
+    opacity: .8;
+    color: #ffff;
+    background: #fb6d43;
+    transition: all .4s ease-in-out;
+}
+
+.container .inputDate #button.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container .inputDate #button:active {
+    transform: scale(.99);
+}
+
+/*====================================================================
+<|-Styles For Responsive Design                                    -|>
+====================================================================*/
+/*====================================================================
+<|-Small desktop or vertical tablet (SM we review at 768px)        -|>
+====================================================================*/
+@media screen and (max-width: 980px){
+    .container {
+        width: 80%;
+        left: 10%;
+    }
+    
+    /*===========================
+    <|-Error Alert Styles     -|>
+    ==========================*/
+    .alertTitle {
+        font-size: 20px;
+    }
+
+    .alertTitle span {
+        font-size: 15px;
+    }
+    
+    .alertText {
+        font-size: 17px;
+    }
+}
+
+
